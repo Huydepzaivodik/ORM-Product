@@ -7,6 +7,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -29,6 +30,7 @@ import java.util.Properties;
 @EnableWebMvc
 @EnableTransactionManagement
 @ComponentScan(basePackages = "com.codegym")
+@EnableJpaRepositories("com.codegym.orm.repository")
 public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAware {
     private ApplicationContext applicationContext;
 
@@ -68,7 +70,7 @@ public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAwa
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/cms");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/showroomHungMan");
         dataSource.setUsername("root");
         dataSource.setPassword("12345678");
         return dataSource;
