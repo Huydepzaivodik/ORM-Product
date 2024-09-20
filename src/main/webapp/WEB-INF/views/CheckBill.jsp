@@ -31,7 +31,6 @@
 
     .invoice-table {
         margin: 0 auto; /* Canh giữa bảng */
-        width: 80%; /* Điều chỉnh độ rộng bảng nếu cần */
         border-collapse: collapse;
         text-align: center;
         background-color: #f2f2f2; /* Màu nền xám nhạt */
@@ -51,15 +50,15 @@
 
     @media print {
         @page {
-            size: A5 landscape;
+            size: A4 portrait; /* A4 dọc */
             margin: 10mm; /* Điều chỉnh lề in */
         }
 
         body {
-            width: 300mm; /* Chiều ngang khổ A5 khi in ngang */
-            height: 120mm; /* Chiều dọc khổ A5 khi in ngang */
+            width: 210mm; /* Chiều ngang khổ A4 */
+            height: 297mm; /* Chiều dọc khổ A4 */
             font-size: 12pt; /* Điều chỉnh kích thước chữ cho phù hợp */
-            transform: scale(1); /* Giữ nguyên tỷ lệ, có thể điều chỉnh để phù hợp hơn */
+            transform: scale(1); /* Giữ nguyên tỷ lệ */
         }
 
         /* Ẩn các thành phần không muốn in, ví dụ như nút "Print" */
@@ -67,6 +66,7 @@
             display: none;
         }
     }
+
 </style>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary noPrint">
@@ -94,7 +94,7 @@
 
 
 <div class="heading" style="display: flex">
-    <div style="width: 50%">
+    <div style="width: 67%">
         <h3>VẬT LIỆU XÂY DỰNG HÙNG MẬN</h3>
         <div><b>CHUYÊN: GẠCH ỐP LÁT - THIẾT BỊ NHÀ BẾP, SEN VÒI, ỐNG NƯỚC</b></div>
         <div>ĐC:Khu đô thị mới - Đường Hai Bà Trưng - TT Lim -Tiên Du - Bắc Ninh</div>
@@ -102,7 +102,7 @@
         <div>STK: 104000208646. ViettinBank. Nguyễn Thị Mận</div>
     </div>
     <div>
-        <h3 style="margin-left: 100px">HÓA ĐƠN BÁN HÀNG</h3>
+        <h4 style="margin-left: 20px">HÓA ĐƠN BÁN HÀNG</h4>
     </div>
 </div>
 <br>
@@ -140,35 +140,35 @@
                 <td>${bill.getUnit()}</td>
                 <td>${bill.getQuantity()}</td>
                 <td><fmt:formatNumber value="${bill.getPrice()}" type="number" minFractionDigits="0"
-                                      maxFractionDigits="0"/><b> VNĐ</b></td>
+                                      maxFractionDigits="0"/></td>
                 <td><fmt:formatNumber value="${bill.getAmount()}" type="number" minFractionDigits="0"
-                                      maxFractionDigits="0"/><b> VNĐ</b></td>
+                                      maxFractionDigits="0"/></td>
             </tr>
         </c:forEach>
         <tr>
             <td colspan="5">Tổng cộng:</td>
             <td colspan="3"><fmt:formatNumber value="${totalAmount}" type="number" minFractionDigits="0"
-                                              maxFractionDigits="0"/><b> VNĐ</b></td>
+                                              maxFractionDigits="0"/></td>
         </tr>
         <tr>
             <td colspan="5">Nợ cũ:</td>
             <td colspan="3"><input type="number" id="debt"
                                    style="border: none;background-color: transparent;text-align: center"
-                                   value="${bills.get(0).invoicee.debt}"><b>VNĐ</b>
+                                   value="${bills.get(0).invoicee.debt}">
             </td>
         </tr>
         <tr>
             <td colspan="5">Tiền khách đưa:</td>
             <td colspan="3"><input type="number" id="cash"
                                    style="border: none;background-color: transparent;text-align: center"
-                                   value="${bills.get(0).invoicee.cash}"> <b>VNĐ</b>
+                                   value="${bills.get(0).invoicee.cash}">
             </td>
         </tr>
         <tr>
             <td colspan="5">Tổng cần thanh toán:</td>
             <td colspan="3"><input style="border: none; background-color: transparent; text-align: center;" type="text"
                                    disabled id="totalInvoice">
-                <b>VNĐ</b></td>
+               </td>
         </tr>
         </tbody>
     </table>
