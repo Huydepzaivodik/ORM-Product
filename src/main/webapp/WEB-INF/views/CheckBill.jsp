@@ -176,7 +176,7 @@
 </div>
 <br>
 <div style="float: right;margin-right: 100px">
-    Ngày... tháng... năm...
+    Ngày...... tháng...... năm......
     <br>
     <b style="margin-left: 19px">Chủ cửa hàng</b>
 </div>

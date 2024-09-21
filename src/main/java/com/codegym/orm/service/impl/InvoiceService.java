@@ -30,7 +30,7 @@ public class InvoiceService implements IInvoiceService {
 
     @Override
     public void remove(Long id) {
-
+        invoiceRepository.deleteById(id);
     }
 
     @Override

@@ -79,11 +79,28 @@
                     <button type="button" class="btn btn-success"
                             onclick="window.location.href='/bills/showTheBillById?id=${l.id}'">Xem
                     </button>
+                    <button type="button" class="btn btn-danger" onclick="deleteBill(${l.id})">Xóa
+
+                    </button>
                 </div>
             </div>
         </c:forEach>
     </div>
 </div>
+
+
+<script>
+    function deleteBill(id) {
+        console.log(id);
+        let isConfirm = confirm("Bạn có muốn xóa hóa đơn này không ?");
+        if (isConfirm) {
+            axios.delete(`http://localhost:8080/invoice/deleteBill/` + id).then((response) => {
+                alert("Xóa thành công !");
+                window.location.href="../invoice/checkInvoice";
+            })
+        }
+    }
+</script>
 
 
 </body>
