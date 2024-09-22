@@ -21,6 +21,12 @@
     </script>
 </head>
 <style>
+
+    table.table tbody tr {
+        line-height: 0.4; /* Giảm chiều cao dòng */
+        padding: 5px 0; /* Điều chỉnh khoảng cách bên trong */
+    }
+
     .invoice-container {
         display: flex;
         justify-content: center;
@@ -194,10 +200,12 @@
                                       maxFractionDigits="0"/></td>
                 <td class="btn_chinh_sua noPrint">
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal${bill.getId()}">
-                        Chỉnh Sửa
-                    </button>
+<%--                    <button type="button" class="btn btn-success" data-bs-toggle="modal"--%>
+<%--                            data-bs-target="#exampleModal${bill.getId()}">--%>
+<%--                        Chỉnh Sửa--%>
+<%--                    </button>--%>
+                    <a href="#" data-bs-toggle="modal"
+                       data-bs-target="#exampleModal${bill.getId()}" style="text-decoration: none; color: green"><b>Chỉnh sửa</b></a>
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal${bill.getId()}" tabindex="-1"
                          aria-labelledby="exampleModalLabel"
@@ -260,7 +268,8 @@
                     </div>
                 </td>
                 <td class="btn_xoa noPrint">
-                    <button type="button" class="btn btn-danger" onclick="deleteBill(${bill.getId()})">Xóa</button>
+<%--                <button type="button" class="btn btn-danger" onclick="deleteBill(${bill.getId()})">Xóa</button>--%>
+                    <a href="#" onclick="deleteBill(${bill.getId()})" style="text-decoration: none; color: red"><b>Xóa</b></a>
                 </td>
             </tr>
         </c:forEach>
@@ -285,7 +294,7 @@
             <td colspan="5">Tổng cần thanh toán:</td>
             <td colspan="3"><input style="border: none; background-color: transparent; text-align: center;" type="text"
                                    disabled id="totalInvoice">
-                </td>
+            </td>
         </tr>
         </tbody>
     </table>
@@ -359,7 +368,7 @@
         let unitPrice = document.getElementById(`unitPrice` + id).value;
         let totalField = document.getElementById(`total` + id);
 
-        // Kiểm tra nếu số lượng và đơn giá đều có giá trị
+
         if (quantity && unitPrice) {
             let total = quantity * unitPrice;
             totalField.value = total;
