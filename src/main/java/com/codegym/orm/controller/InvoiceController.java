@@ -51,16 +51,18 @@ public class InvoiceController {
     public ResponseEntity<String> deleteBill(@PathVariable Long id) {
 
         List<Bill> bills = billService.findAllByUserId(id);
-        if (bills.get(0).getInvoicee() != null) {
+        if (!bills.isEmpty()) {
             for (Bill bill : bills) {
                 billService.remove(bill.getId());
             }
-            invoiceService.remove(bills.get(0).getInvoicee().getId());
-            userService.remove(id);
-        }else{
-            for (Bill bill : bills) {
-                billService.remove(bill.getId());
+            if (bills.get(0).getInvoicee() != null) {
+                invoiceService.remove(bills.get(0).getInvoicee().getId());
+                userService.remove(id);
+            } else {
+                userService.remove(id);
             }
+
+        } else {
             userService.remove(id);
         }
         return new ResponseEntity<>("Successfully deleted", HttpStatus.OK);

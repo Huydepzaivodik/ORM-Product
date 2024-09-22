@@ -21,6 +21,12 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <style>
+
+    table.table tbody tr {
+        line-height: 0.3; /* Giảm chiều cao dòng */
+        padding: 5px 0; /* Điều chỉnh khoảng cách bên trong */
+    }
+
     .invoice-container {
         display: flex;
         justify-content: center;
@@ -91,8 +97,6 @@
         </div>
     </div>
 </nav>
-
-
 <div class="heading" style="display: flex">
     <div style="width: 67%">
         <h3>VẬT LIỆU XÂY DỰNG HÙNG MẬN</h3>
@@ -105,7 +109,13 @@
         <h4 style="margin-left: 20px">HÓA ĐƠN BÁN HÀNG</h4>
     </div>
 </div>
-<br>
+
+<c:if test="${not empty error}">
+    <div class="alert alert-danger">
+            ${error}
+    </div>
+</c:if>
+
 <%--Phần sửa đổi thông tin khách hàng--%>
 <div class="information-user" id="userInformation">
     <b>Tên khách hàng: </b> <input disabled type="text" style="border: none;background-color: white;width: 500px"
@@ -172,9 +182,7 @@
         </tr>
         </tbody>
     </table>
-
 </div>
-<br>
 <div style="float: right;margin-right: 100px">
     Ngày...... tháng...... năm......
     <br>

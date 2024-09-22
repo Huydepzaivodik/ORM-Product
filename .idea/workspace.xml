@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="63355958-c9e2-4fe5-9a34-a994c5eddf45" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/orm/controller/BillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/orm/controller/BillController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/orm/controller/InvoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/orm/controller/InvoiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/orm/service/impl/InvoiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/orm/service/impl/InvoiceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/orm/service/impl/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/orm/service/impl/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/CheckBill.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/CheckBill.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/CheckInvoice.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/CheckInvoice.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ShowInvoice.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ShowInvoice.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,6 +65,7 @@
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Tomcat Server.Tomcat 9.0.871.executor&quot;: &quot;Run&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -251,7 +250,8 @@
       <workItem from="1726415217629" duration="7710000" />
       <workItem from="1726464822445" duration="9867000" />
       <workItem from="1726836401347" duration="4991000" />
-      <workItem from="1726881508972" duration="13120000" />
+      <workItem from="1726881508972" duration="16526000" />
+      <workItem from="1726970724375" duration="4661000" />
     </task>
     <servers />
   </component>

@@ -122,6 +122,17 @@ public class BillController {
     private ModelAndView showTheBillById(@RequestParam("id") Long id) {
         User user = userService.findById(id);
         List<Bill> bills = billService.findAllByUserId(id);
+
+
+        // Kiểm tra xem bills có rỗng không
+        if (bills == null || bills.isEmpty()) {
+            // Tạo ModelAndView cho trang hiển thị lỗi
+            ModelAndView modelAndView = new ModelAndView("CheckBill");
+            modelAndView.addObject("error", "Người này chưa có hóa đơn gì! Hãy xóa đơn này để tạo lại !");
+            modelAndView.addObject("user", user);
+            return modelAndView;
+        }
+
         double totalAmount = 0;
         for (Bill bill : bills) {
             totalAmount += bill.getAmount();
