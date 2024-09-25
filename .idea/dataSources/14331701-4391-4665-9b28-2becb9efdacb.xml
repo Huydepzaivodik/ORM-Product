@@ -1038,7 +1038,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="302" parent="1" name="showroomhungman">
-      <LastIntrospectionLocalTimestamp>2024-09-05.14:35:41</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-09-25.08:53:24</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="303" parent="1" name="student_management">
@@ -1107,7 +1107,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>5</Position>
     </column>
     <column id="319" parent="311" name="quantity">
-      <DasType>int|0s</DasType>
+      <DasType>double|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="320" parent="311" name="unit">

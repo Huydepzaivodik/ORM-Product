@@ -9,7 +9,7 @@ public class Bill {
     private Long id;
     private Date date;
     private String nameProduct;
-    private Integer quantity;
+    private Double quantity;
     private String unit;
     private Double price;
     private Double amount;
@@ -20,38 +20,10 @@ public class Bill {
     @ManyToOne
     private Invoicee invoicee;
 
-    public Invoicee getInvoicee() {
-        return invoicee;
-    }
-
-    public void setInvoicee(Invoicee invoicee) {
-        this.invoicee = invoicee;
-    }
-
-    public Bill(Long id, Date date, String nameProduct, Integer quantity, String unit, Double price, Double amount, User user, Invoicee invoicee) {
-        this.id = id;
-        this.date = date;
-        this.nameProduct = nameProduct;
-        this.quantity = quantity;
-        this.unit = unit;
-        this.price = price;
-        this.amount = amount;
-        this.user = user;
-        this.invoicee = invoicee;
-    }
-
     public Bill() {
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Bill(Long id, Date date, String nameProduct, Integer quantity, String unit, Double price, Double amount, User user) {
+    public Bill(Long id, Date date, String nameProduct, Double quantity, String unit, Double price, Double amount, User user, Invoicee invoicee) {
         this.id = id;
         this.date = date;
         this.nameProduct = nameProduct;
@@ -60,8 +32,8 @@ public class Bill {
         this.price = price;
         this.amount = amount;
         this.user = user;
+        this.invoicee = invoicee;
     }
-
 
     public Long getId() {
         return id;
@@ -87,11 +59,11 @@ public class Bill {
         this.nameProduct = nameProduct;
     }
 
-    public Integer getQuantity() {
+    public Double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(Double quantity) {
         this.quantity = quantity;
     }
 
@@ -117,5 +89,21 @@ public class Bill {
 
     public void setAmount(Double amount) {
         this.amount = amount;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Invoicee getInvoicee() {
+        return invoicee;
+    }
+
+    public void setInvoicee(Invoicee invoicee) {
+        this.invoicee = invoicee;
     }
 }
