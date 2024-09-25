@@ -308,6 +308,9 @@
 
 <button type="button" class="btn btn-warning noPrint" onclick="window.print()">In hóa đơn</button>
 <button class="btn btn-success noPrint" id="saveInvoice" onclick="saveInvoice()">Lưu Hóa Đơn</button>
+<div class="alert alert-danger noPrint"  style="width: 500px" role="alert">
+    Sau khi chỉnh sửa thì hãy nhớ hãy bấm <b>"Lưu Hóa Đơn" nhé </b>!
+</div>
 
 <script>
     function capNhatTen() {

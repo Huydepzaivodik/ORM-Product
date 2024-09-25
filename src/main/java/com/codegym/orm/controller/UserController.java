@@ -27,16 +27,16 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/addUser")
-    public ModelAndView addUser(@ModelAttribute User user, HttpSession session, RedirectAttributes redirectAttributes) {
-        User u = userService.findByUsernameContainingIgnoreCase(user.getUsername());
-        if (u != null) {
-            redirectAttributes.addFlashAttribute("error", "Tên khách hàng này đã tồn tại !");
-            return new ModelAndView("redirect:/users/formUser");
-        } else {
+    public ModelAndView addUser(@ModelAttribute User user, HttpSession session) {
+//        User u = userService.findByUsernameContainingIgnoreCase(user.getUsername());
+//        if (u != null) {
+//            redirectAttributes.addFlashAttribute("error", "Tên khách hàng này đã tồn tại !");
+//            return new ModelAndView("redirect:/users/formUser");
+//        } else {
             userService.save(user);
             session.setAttribute("currentUser", user);
             return new ModelAndView("redirect:/bills/show");
-        }
+
     }
 
     @GetMapping("/formUser")
