@@ -37,7 +37,7 @@
     <button type="button" class="btn btn-success" style="font-size: 30px;" onclick="window.location.href='/users/formUser'">Tạo Hóa Đơn</button>
     <button type="button" class="btn btn-warning" style="font-size: 30px;" onclick="window.location.href='/invoice/checkInvoice'">Xem Hóa Đơn</button>
 
-    <button type="button" class="btn btn-warning" style="font-size: 30px;" onclick="window.location.href='#'">Check hoá đơn hehe</button>
+    <button type="button" class="btn btn-warning" style="font-size: 30px;" onclick="window.location.href='#'">Check hoá đơn 123</button>
 </div>
 
 </body>
