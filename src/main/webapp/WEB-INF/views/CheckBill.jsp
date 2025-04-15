@@ -155,11 +155,14 @@
                                       maxFractionDigits="0"/></td>
             </tr>
         </c:forEach>
-        <tr>
-            <td colspan="5">Tổng cộng:</td>
-            <td colspan="3"><fmt:formatNumber value="${totalAmount}" type="number" minFractionDigits="0"
-                                              maxFractionDigits="0"/></td>
+        <tr style="height: 45px; text-align: center; vertical-align: middle;">
+            <td colspan="5" style="height: 45px; text-align: center; vertical-align: middle;">Tổng cộng:</td>
+            <td colspan="3" style="height: 45px; text-align: center; vertical-align: middle;">
+                <fmt:formatNumber value="${totalAmount}" type="number" minFractionDigits="0" maxFractionDigits="0"/>
+            </td>
         </tr>
+
+
         <tr>
             <td colspan="5">Nợ cũ:</td>
             <td colspan="3"><input type="number" id="debt"
@@ -183,11 +186,19 @@
         </tbody>
     </table>
 </div>
-<div style="float: right;margin-right: 100px">
-    Ngày...... tháng...... năm......
-    <br>
-    <b style="margin-left: 19px">Chủ cửa hàng</b>
+<div style="display: flex; width: 100%; justify-content: space-between">
+    <div style="margin: 30px">
+        <b>Chữ ký khách hàng</b>
+    </div>
+    <div style="text-align: center; margin-right: 40px">
+        Ngày...... tháng...... năm......
+        <br>
+        <b style="display: inline-block; width: 100%;">Chủ cửa hàng</b>
+    </div>
 </div>
+
+
+
 
 <button type="button" class="btn btn-warning noPrint" onclick="window.print()">In hóa đơn</button>
 <button class="btn btn-success noPrint" id="saveInvoice" onclick="saveBill()">Lưu Hóa Đơn</button>

@@ -273,16 +273,20 @@
                 </td>
             </tr>
         </c:forEach>
-        <tr>
-            <td colspan="5">Tổng cộng:</td>
-            <td colspan="3"><fmt:formatNumber value="${totalAmount}" type="number" minFractionDigits="0"
-                                              maxFractionDigits="0"/></td>
+        <tr style="height: 45px; text-align: center; vertical-align: middle;">
+            <td colspan="5" style="height: 45px; text-align: center; vertical-align: middle;">Tổng cộng:</td>
+            <td colspan="3" style="height: 45px; text-align: center; vertical-align: middle;">
+                <fmt:formatNumber value="${totalAmount}" type="number" minFractionDigits="0" maxFractionDigits="0"/>
+            </td>
         </tr>
         <tr>
             <td colspan="5">Nợ cũ:</td>
-            <td colspan="3"><input type="number" id="debt"
-                                   style="border: none;background-color: transparent;text-align: center">
+            <td colspan="3"><input type="text" id="debt"
+                                   style="border: none;background-color: transparent;text-align: center"
+                                >
+
             </td>
+
         </tr>
         <tr>
             <td colspan="5">Tiền khách đưa:</td>
@@ -300,10 +304,15 @@
     </table>
 </div>
 <br>
-<div style="float: right;margin-right: 100px">
-    Ngày...... tháng...... năm......
-    <br>
-    <b style="margin-left: 19px">Chủ cửa hàng</b>
+<div style="display: flex; width: 100%; justify-content: space-between">
+    <div style="margin: 30px">
+        <b>Chữ ký khách hàng</b>
+    </div>
+    <div style="text-align: center; margin-right: 40px">
+        Ngày...... tháng...... năm......
+        <br>
+        <b style="display: inline-block; width: 100%;">Chủ cửa hàng</b>
+    </div>
 </div>
 
 <button type="button" class="btn btn-warning noPrint" onclick="window.print()">In hóa đơn</button>
@@ -381,21 +390,22 @@
         }
     }
 </script>
+
+<script>
+    // Hàm định dạng số với dấu phẩy kiểu Việt Nam
+    function formatNumber(value) {
+        // Chuyển số thành chuỗi và làm tròn đến số nguyên
+        var numberStr = value.toFixed(0);
+        // Thay thế các nhóm ba chữ số bằng dấu phẩy
+        return numberStr.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+</script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var debtInput = document.getElementById('debt');
         var cashInput = document.getElementById('cash');
         var totalInvoiceInput = document.getElementById('totalInvoice');
         var totalAmount = parseFloat('${totalAmount}');
-
-
-        // Hàm định dạng số với dấu phẩy kiểu Việt Nam
-        function formatNumber(value) {
-            // Chuyển số thành chuỗi và làm tròn đến số nguyên
-            var numberStr = value.toFixed(0);
-            // Thay thế các nhóm ba chữ số bằng dấu phẩy
-            return numberStr.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-        }
 
         // Hàm tính toán tổng cần thanh toán
         function calculateTotalInvoice() {
