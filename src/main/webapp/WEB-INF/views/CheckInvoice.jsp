@@ -90,11 +90,12 @@
 
 
 <script>
+
     function deleteBill(id) {
         console.log(id);
         let isConfirm = confirm("Bạn có muốn xóa hóa đơn này không ?");
         if (isConfirm) {
-            axios.delete(`http://localhost:8080/invoice/deleteBill/` + id).then((response) => {
+            axios.delete(`${api_url}/invoice/deleteBill/` + id).then((response) => {
                 alert("Xóa thành công !");
                 window.location.href="../invoice/checkInvoice";
             })

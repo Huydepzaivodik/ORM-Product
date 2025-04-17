@@ -6,6 +6,7 @@ import com.codegym.orm.model.User;
 import com.codegym.orm.service.impl.BillService;
 import com.codegym.orm.service.impl.InvoiceService;
 import com.codegym.orm.service.impl.UserService;
+import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +29,7 @@ public class InvoiceController {
     @Autowired
     private BillService billService;
 
+
     @PostMapping("/addInvoice")
     public ResponseEntity<Invoicee> addInvoice(@RequestBody Invoicee invoicee) {
         invoiceService.save(invoicee);
@@ -37,7 +39,10 @@ public class InvoiceController {
 
     @GetMapping("/checkInvoice")
     public ModelAndView checkInvoice() {
+
+        Dotenv dotenv = Dotenv.load();
         ModelAndView mav = new ModelAndView("CheckInvoice");
+        mav.addObject("api_url", dotenv.get("API_URL"));
         return mav;
     }
 
